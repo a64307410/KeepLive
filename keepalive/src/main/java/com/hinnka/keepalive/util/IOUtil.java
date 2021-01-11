@@ -1,6 +1,6 @@
 package com.hinnka.keepalive.util;
 
-import com.qihoo.libcoredaemon.DaemonNative;
+import com.hinnka.libcoredaemon.DaemonNative;
 
 import java.io.File;
 
@@ -26,7 +26,6 @@ public class IOUtil {
             return false;
         }
     }
-
     public static boolean waitFileLock(String dir, String strArr) {
         try {
             File file = new File(dir);

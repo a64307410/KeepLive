@@ -1,4 +1,4 @@
-package com.qihoo.libcoredaemon;
+package com.hinnka.libcoredaemon;
 
 import android.content.ComponentName;
 import android.content.Intent;
@@ -10,11 +10,11 @@ import android.text.TextUtils;
 
 import com.hinnka.keepalive.ConfigInternal;
 import com.hinnka.keepalive.DaemonParams;
+import com.hinnka.keepalive.util.IOUtil;
 import com.hinnka.keepalive.KeepAliveDaemon;
 import com.hinnka.keepalive.component.AutoBootReceiver;
 import com.hinnka.keepalive.component.KeepAliveInstrumentation;
 import com.hinnka.keepalive.component.KeepAliveService;
-import com.hinnka.keepalive.util.IOUtil;
 import com.hinnka.keepalive.util.KLog;
 
 import java.io.BufferedReader;
@@ -178,7 +178,7 @@ public class DaemonEntry {
         try {
             Method setArgV0 = android.os.Process.class.getDeclaredMethod("setArgV0", String.class);
             setArgV0.setAccessible(true);
-            setArgV0.invoke(null, processName);
+            setArgV0.invoke(null,processName);
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

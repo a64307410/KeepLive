@@ -13,12 +13,21 @@ android {
 
         resValue "string", "daemon_account_type", applicationId + ".daemon.account"
         resValue "string", "daemon_account_auth", applicationId + ".daemon.account"
+
+        ndk {
+            abiFilters 'armeabi-v7a'
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        ndkBuild {
+            path file('src/main/jni/Android.mk')
         }
     }
 }

@@ -4,10 +4,12 @@ import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.net.Uri;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.hinnka.keepalive.KeepAliveConfig;
 import com.hinnka.keepalive.util.KLog;
 
 public class KeepAliveProvider extends ContentProvider {

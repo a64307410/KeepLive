@@ -8,6 +8,8 @@ import android.util.Log;
 import com.hinnka.keepalive.KeepAliveListener;
 import com.hinnka.keepalive.KeepAliveManager;
 
+import org.json.JSONObject;
+
 import java.util.Map;
 
 public class MainApplication extends Application {

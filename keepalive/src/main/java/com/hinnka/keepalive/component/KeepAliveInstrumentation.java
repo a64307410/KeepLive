@@ -4,8 +4,11 @@ import android.app.Application;
 import android.app.Instrumentation;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.hinnka.keepalive.ConfigInternal;
+import com.hinnka.keepalive.KeepAliveConfig;
+import com.hinnka.keepalive.KeepAliveManager;
 
 public class KeepAliveInstrumentation extends Instrumentation {
     @Override

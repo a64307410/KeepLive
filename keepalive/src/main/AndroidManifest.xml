@@ -30,7 +30,6 @@
                 <action android:name="com.hinnka.keepalive.notify" />
             </intent-filter>
         </service>
-
         <activity
             android:name=".component.AZActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"

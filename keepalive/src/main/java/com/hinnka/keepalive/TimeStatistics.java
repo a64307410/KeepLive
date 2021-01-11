@@ -8,13 +8,15 @@ import android.os.Looper;
 
 import com.hinnka.keepalive.util.KLog;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class TimeStatistics {
 
-    private TimeStatistics() {
-    }
+    private TimeStatistics() {}
 
     private static class SingletonHolder {
         private static final TimeStatistics instance = new TimeStatistics();

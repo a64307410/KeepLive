@@ -15,27 +15,21 @@ public class DeviceUtil {
     public static boolean isHuawei() {
         return isROM(ROM_HUAWE, ROM_HONOR);
     }
-
     public static boolean isMIUI() {
         return isROM(ROM_MIUI);
     }
-
     public static boolean isVivo() {
         return isROM(ROM_VIVO);
     }
-
     public static boolean isOppo() {
         return isROM(ROM_OPPO);
     }
-
     public static boolean isMeizu() {
         return isROM(ROM_MEIZU);
     }
-
     public static boolean isSamsung() {
         return isROM(ROM_SAMSUNG);
     }
-
     public static boolean isSmartisan() {
         return isROM(ROM_SMARTISAN);
     }
@@ -44,7 +38,7 @@ public class DeviceUtil {
         String brand = Build.BRAND; //获取主板
         String manufacturer = Build.MANUFACTURER; //获取硬件制造商
         for (String rom : roms) {
-            if (rom.equalsIgnoreCase(brand) || rom.equalsIgnoreCase(manufacturer)) {
+            if(rom.equalsIgnoreCase(brand) || rom.equalsIgnoreCase(manufacturer)){
                 return true;
             }
         }

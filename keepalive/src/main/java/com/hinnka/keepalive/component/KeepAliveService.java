@@ -60,6 +60,7 @@ public class KeepAliveService extends Service {
     }
 
 
+
     public static void keepForeground(Service service) {
         try {
 
@@ -110,6 +111,8 @@ public class KeepAliveService extends Service {
         threadAlive = false;
         super.onDestroy();
     }
+
+
 
 
     public static void start(Context context) {

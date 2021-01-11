@@ -73,7 +73,7 @@ public class KeepAliveScreenMonitor {
                 if (sActiveWakeLocks != null) {
                     sActiveWakeLocks.release();
                 }
-                PowerManager pm = (PowerManager) mContext.getSystemService(Context.POWER_SERVICE);
+                PowerManager pm = (PowerManager)mContext.getSystemService(Context.POWER_SERVICE);
                 PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                         "com.hinnka.keepalive:wake");
                 wl.setReferenceCounted(false);

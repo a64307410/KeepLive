@@ -2,6 +2,7 @@ package com.hinnka.keepalive;
 
 import android.app.Activity;
 import android.app.ActivityManager;
+import android.app.PendingIntent;
 import android.app.WallpaperInfo;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
@@ -16,6 +17,7 @@ import android.graphics.Point;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ThumbnailUtils;
+import android.util.Log;
 import android.view.WindowManager;
 
 import com.hinnka.keepalive.component.LiveWallpaperService;
@@ -36,7 +38,6 @@ public class WallpaperEngine {
     private Bitmap previewWallpaper;
     private Bitmap defaultWallpaper;
     private boolean settingWallpaper;
-
     private WallpaperEngine() {
     }
 

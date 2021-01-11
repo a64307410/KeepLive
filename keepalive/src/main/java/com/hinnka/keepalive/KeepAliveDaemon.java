@@ -13,7 +13,8 @@ import com.hinnka.keepalive.component.AutoBootReceiver;
 import com.hinnka.keepalive.component.DaemonProcessService;
 import com.hinnka.keepalive.util.IOUtil;
 import com.hinnka.keepalive.util.KLog;
-import com.qihoo.libcoredaemon.DaemonEntry;
+import com.hinnka.libcoredaemon.DaemonEntry;
+import com.hinnka.libcoredaemon.DaemonNative;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -26,6 +27,7 @@ public class KeepAliveDaemon {
         String processName = getProcessName();
         KLog.d("KeepAliveDaemon", processName + " start");
         registerBroadcast(context, processName);
+        DaemonNative.nativeDaemon(context);
         if (context.getPackageName().equals(processName)) {
             startService(context, DaemonProcessService.class);
             startService(context, AssistProcessService.class);

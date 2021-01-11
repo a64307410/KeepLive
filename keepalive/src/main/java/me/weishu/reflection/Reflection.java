@@ -49,14 +49,14 @@ public class Reflection {
         File code = new File(codeCacheDir, System.currentTimeMillis() + ".dex");
         try {
 
-            try (FileOutputStream fos = new FileOutputStream(code)) {
+            try(FileOutputStream fos = new FileOutputStream(code)) {
                 fos.write(bytes);
             }
 
             DexFile dexFile = new DexFile(code);
             Class<?> bootstrapClass = dexFile.loadClass(BootstrapClass.class.getCanonicalName(), null);
             Method exemptAll = bootstrapClass.getDeclaredMethod("exemptAll");
-            return (boolean) exemptAll.invoke(null);
+            return  (boolean) exemptAll.invoke(null);
         } catch (Throwable e) {
             e.printStackTrace();
             return false;

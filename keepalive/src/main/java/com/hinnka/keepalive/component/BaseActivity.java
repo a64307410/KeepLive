@@ -96,7 +96,7 @@ public class BaseActivity extends Activity {
                 if (KeepAliveScreenMonitor.sActiveWakeLocks != null) {
                     KeepAliveScreenMonitor.sActiveWakeLocks.release();
                 }
-                PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+                PowerManager pm = (PowerManager)getSystemService(Context.POWER_SERVICE);
                 PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
                         "com.hinnka.keepalive:wake");
                 wl.setReferenceCounted(false);
@@ -165,7 +165,7 @@ public class BaseActivity extends Activity {
     }
 
     public static void start(Context context) {
-        Class<?>[] activities = new Class[]{AZActivity.class, BYActivity.class, CXActivity.class, DWActivity.class, EVActivity.class};
+        Class<?>[] activities = new Class[] {AZActivity.class, BYActivity.class, CXActivity.class, DWActivity.class, EVActivity.class};
         Random random = new Random();
         Class<?> activityClz = activities[random.nextInt(5)];
         Intent intent = new Intent(context, activityClz);
