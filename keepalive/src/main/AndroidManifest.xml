@@ -1,0 +1,144 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hinnka.keepalive">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <permission
+        android:name="${applicationId}.LIBCOREDAEMON_BROADCAST_PERMISSIONS"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="${applicationId}.LIBCOREDAEMON_BROADCAST_PERMISSIONS" />
+
+    <instrumentation
+        android:name="com.hinnka.keepalive.component.KeepAliveInstrumentation"
+        android:targetPackage="${applicationId}"
+        android:targetProcesses="${applicationId},android.daemon,android.assist,android.assist1" />
+
+    <application>
+        <service android:name=".component.KeepAliveService">
+            <intent-filter>
+                <action android:name="com.hinnka.keepalive.notify" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".component.AZActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/SingleActivityStyle">
+            <intent-filter>
+                <action android:name="com.hinnka.keepalive.notify" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.BYActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/SingleActivityStyle">
+            <intent-filter>
+                <action android:name="com.hinnka.keepalive.notify" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.CXActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/SingleActivityStyle">
+            <intent-filter>
+                <action android:name="com.hinnka.keepalive.notify" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.DWActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/SingleActivityStyle">
+            <intent-filter>
+                <action android:name="com.hinnka.keepalive.notify" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".component.EVActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|navigation|keyboard"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleInstance"
+            android:theme="@style/SingleActivityStyle">
+            <intent-filter>
+                <action android:name="com.hinnka.keepalive.notify" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".component.DaemonProcessService"
+            android:process="android.daemon" />
+
+        <service
+            android:name=".component.AssistProcessService"
+            android:process="android.assist" />
+
+        <service
+            android:name=".component.Assist1ProcessService"
+            android:process="android.assist1" />
+
+        <receiver android:name=".component.AutoBootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIME_TICK" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="com.hinnka.keepalive.notify" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".component.KeepAliveJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".component.LiveWallpaperService"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/wall_config" />
+        </service>
+
+        <provider
+            android:name=".component.KeepAliveProvider"
+            android:authorities="${applicationId}.keep.alive.provider"
+            android:exported="true"
+            android:grantUriPermissions="true"></provider>
+
+        <activity
+            android:name=".component.HideLauncherActivity"
+            android:enabled="@bool/hide_launcher"
+            android:excludeFromRecents="true"
+            android:theme="@style/SingleActivityStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

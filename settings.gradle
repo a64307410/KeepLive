@@ -1,0 +1,4 @@
+include ':keepalivedemo2'
+include ':keepalive'
+include ':app'
+rootProject.name = "KeepAliveDemo"

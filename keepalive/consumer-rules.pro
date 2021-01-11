@@ -1,0 +1,2 @@
+-keep class com.hinnka.keepalive.component.** { *; }
+-keep class com.qihoo.libcoredaemon.** { *; }
