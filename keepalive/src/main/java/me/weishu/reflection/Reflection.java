@@ -2,10 +2,8 @@ package me.weishu.reflection;
 
 import android.content.Context;
 import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.util.Base64;
-
-import androidx.annotation.RequiresApi;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.lang.reflect.Method;

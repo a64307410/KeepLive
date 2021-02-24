@@ -25,12 +25,10 @@ import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.support.annotation.Nullable;
 import android.view.Gravity;
 import android.view.Window;
 import android.view.WindowManager;
-
-import androidx.annotation.Nullable;
-
 import com.hinnka.keepalive.KeepAliveScreenMonitor;
 import com.hinnka.keepalive.TimeStatistics;
 import com.hinnka.keepalive.util.ActivityUtil;

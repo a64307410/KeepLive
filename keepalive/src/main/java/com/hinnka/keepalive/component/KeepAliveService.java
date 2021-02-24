@@ -27,10 +27,8 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.SystemClock;
+import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
-
-import androidx.core.app.NotificationCompat;
-
 import com.hinnka.keepalive.ConfigInternal;
 import com.hinnka.keepalive.KeepAliveDaemon;
 import com.hinnka.keepalive.R;
